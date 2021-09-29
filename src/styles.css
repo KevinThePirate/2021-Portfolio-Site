@@ -22,7 +22,6 @@ h3 {
   font-size: 1.5rem;
 }
 #title-area {
-  border: 1px solid white;
   display: inline-block;
   margin-left: 10%;
   margin-top: 15%;
@@ -39,16 +38,23 @@ button {
   cursor: pointer;
   font-size: 0.85em;
 }
+button:hover {
+  background-color: #f69f1f;
+}
+i:hover {
+  color: #f69f1f;
+}
 #section-2 {
   display: grid;
   grid-template-columns: auto auto;
 }
 #two-one,
 #two-two {
-  border: 5px solid white;
   width: 50%;
   height: 100%;
   padding: 10px;
+  display: flex;
+  align-items: center;
 }
 #two-one {
   position: absolute;
@@ -59,16 +65,106 @@ button {
   right: 0;
   top: 0;
 }
+
+.logo {
+  border: 10px solid white;
+  width: 50%;
+  height: 50%;
+  border-radius: 100%;
+}
+#basic-info-area {
+  text-align: center;
+}
+#basic-info-area a {
+  font-size: 2rem;
+  color: black;
+  margin: 5px;
+}
+#basic-info-area p {
+  text-align: justify;
+  margin: 50px;
+}
+#work-area {
+  height: 60%;
+  position: absolute;
+  top: 0;
+  bottom: 60%;
+  margin-left: 50px;
+  margin-right: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#button-area {
+  position: absolute;
+  top: 60%;
+  height: 40%;
+  width: calc(100% - 110px);
+  margin-left: 50px;
+  margin-right: 50px;
+}
+table {
+  width: 75%;
+  margin: auto;
+}
+table button {
+  width: 100%;
+  height: 100%;
+}
+table td {
+  width: 33%;
+  height: 100%;
+}
 @media screen and (max-width: 767px) {
   #two-one,
   #two-two {
     width: 100%;
     height: 50%;
   }
+  table {
+    margin-top: -20px;
+  }
   #two-one {
     top: 0;
   }
   #two-two {
     top: 50%;
+  }
+  .logo {
+    border: 5px solid white;
+    width: 25%;
+    height: 25%;
+    border-radius: 100%;
+    margin-top: 50px;
+  }
+  #basic-info-area {
+    text-align: center;
+  }
+  #basic-info-area h1 {
+    font-size: 40px;
+  }
+  #basic-info-area a {
+    font-size: 1.5rem;
+    color: black;
+    margin: 5px;
+  }
+  #work-area {
+    height: 55%;
+  }
+  #button-area {
+    position: absolute;
+    top: 55%;
+    height: 45%;
+    width: calc(100% - 110px);
+  }
+  #work-area > * {
+    margin-top: -20px;
+  }
+  #work-area h5 {
+    margin-bottom: 0;
+  }
+  #work-area p {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }

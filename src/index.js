@@ -3,15 +3,48 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "fullpage.js/vendors/scrolloverflow"; // Optional. When using scrollOverflow:true
 import ReactFullpage from "@fullpage/react-fullpage";
-
+import Data from "./data.json";
 import "./styles.css";
 
+import TitleSection from "./components/TitleSection-1";
+import AboutSection from "./components/AboutSection";
+import PortfolioSection from "./components/PortfolioSection";
+import FooterSection from "./components/FooterSection";
+
+export let topics = [];
+for (let i = 0; i < Data.length; i++) {
+  topics.push(Data[i].title);
+}
+console.log({ topics });
+
 class FullpageWrapper extends React.Component {
+  constructor(props) {
+    super(props);
+    this.buttonGen = this.buttonGen.bind(this);
+  }
   onLeave(origin, destination, direction) {
     console.log("Leaving section " + origin.index);
   }
   afterLoad(origin, destination, direction) {
     console.log("After load: " + destination.index);
+  }
+  buttonGen() {
+    let table = [];
+    for (let i = 0; i < topics.length; i++) {
+      if (i == 3) {
+        table.push(<tr></tr>);
+      }
+      table.push(
+        <td>
+          <button onClick={() => this.api.moveTo(3, i)}>{topics[i]}</button>
+        </td>
+      );
+    }
+    console.log({ table });
+    /*table = table.map((topic) => (
+      <button onClick={() => fullpageApi.moveTo(1, 0)}> {topic} </button>
+    ));*/
+    return table;
   }
   render() {
     return (
@@ -21,43 +54,24 @@ class FullpageWrapper extends React.Component {
         onLeave={this.onLeave.bind(this)}
         afterLoad={this.afterLoad.bind(this)}
         render={({ state, fullpageApi }) => {
+          this.api = fullpageApi;
           return (
             <div id="fullpage-wrapper">
+              <link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+              />
               <div className="section section1">
-                <div id="title-area">
-                  <h1>Kevin M.Smith</h1>
-                  <h4>Web Dev, Design and Video & Comic Production</h4>
-                </div>
+                <TitleSection />
               </div>
               <div className="section" id="section-2">
-                <div id="two-one">fgh</div>
-                <div id="two-two">abc</div>
+                <AboutSection api={this.api} buttonGen={this.buttonGen} />
               </div>
               <div className="section">
-                <div className="slide">
-                  <h3>Programming</h3>
-                </div>
-                <div className="slide">
-                  <h3>Comics</h3>
-                </div>
-                <div className="slide">
-                  <h3>Graphic Design</h3>
-                </div>
-                <div className="slide">
-                  <h3>Video Editing</h3>
-                </div>
-                <div className="slide">
-                  <h3>Teaching</h3>
-                </div>
-                <div className="slide">
-                  <h3>Animation</h3>
-                </div>
+                <PortfolioSection />
               </div>
               <div className="section">
-                <h3>Section 4</h3>
-                <button onClick={() => fullpageApi.moveTo(1, 0)}>
-                  Move top
-                </button>
+                <FooterSection api={this.api} />
               </div>
             </div>
           );
