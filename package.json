@@ -1,4 +1,5 @@
 {
+  "homepage": "http://kevinthepirate.github.io/2021-Portfolio-Site",
   "name": "react-fullpagejs-example",
   "version": "1.0.0",
   "keywords": [
@@ -14,8 +15,12 @@
     "react-scripts": "3.1.1",
     "web-vitals": "^2.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
+  },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
