@@ -10,6 +10,7 @@ import TitleSection from "./components/TitleSection-1";
 import AboutSection from "./components/AboutSection";
 import PortfolioSection from "./components/PortfolioSection";
 import FooterSection from "./components/FooterSection";
+import PortfolioNavBar from "./components/PortfolioNavBar";
 
 export let topics = [];
 for (let i = 0; i < Data.length; i++) {
@@ -31,7 +32,7 @@ class FullpageWrapper extends React.Component {
   buttonGen() {
     let table = [];
     for (let i = 0; i < topics.length; i++) {
-      if (i == 3) {
+      if (i == topics.length / 2) {
         table.push(<tr></tr>);
       }
       table.push(
@@ -67,12 +68,13 @@ class FullpageWrapper extends React.Component {
               <div className="section" id="section-2">
                 <AboutSection api={this.api} buttonGen={this.buttonGen} />
               </div>
-              <div className="section">
-                <PortfolioSection />
+              <div className="section" id="section-3">
+                <PortfolioNavBar api={this.api} buttonGen={this.buttonGen} />
+                <PortfolioSection id="portfolio-sect" />
               </div>
-              <div className="section">
+              {/* <div className="section">
                 <FooterSection api={this.api} />
-              </div>
+          </div> */}
             </div>
           );
         }}

@@ -1,10 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap");
 * {
   box-sizing: border-box;
 }
 body {
-  font-family: arial, helvetica;
+  font-family: "Comfortaa", cursive;
 }
-
+p {
+  font-size: 1.25em;
+}
 h3 {
   font-size: 5em;
   text-align: center;
@@ -115,6 +118,57 @@ table td {
   width: 33%;
   height: 100%;
 }
+.container {
+  width: 100%;
+  margin: auto;
+  height: 90vh;
+  padding: 20px;
+  margin-top: -200px;
+}
+
+.card-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.card-container div {
+  width: 90%;
+  height: 30vh;
+  margin: 10px;
+  overflow: hidden;
+  background-color: white;
+  padding: 1rem;
+  border: 1px solid #777;
+  border-radius: 0.5rem;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+  padding: 0;
+}
+.card-container p {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.card-container div img {
+  width: 100%;
+  aspect-ratio: 16 / 3;
+  padding: 0;
+  object-fit: cover;
+  object-position: center;
+  transition: 200ms transform ease-in-out;
+}
+.card-container div img:hover {
+  transform: scale(1.025);
+}
+.skill-button {
+  display: inline;
+  margin: 5px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.project-links a {
+  color: black;
+}
+
 @media screen and (max-width: 767px) {
   #two-one,
   #two-two {
@@ -166,5 +220,10 @@ table td {
   #work-area p {
     margin-top: 10px;
     margin-bottom: 10px;
+  }
+  .container button {
+    width: calc(100% / 9);
+    padding: 0;
+    font-size: ;
   }
 }

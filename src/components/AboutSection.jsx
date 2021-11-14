@@ -14,7 +14,7 @@ export default class AboutSection extends Component {
             <h1>Kevin M. Smith</h1>
             <div id="logo-area">
               <a
-                href="docs/Kevin_Smith_CV.pdf"
+                href="https://drive.google.com/file/d/1R5B3dNofDEHf_mhv2y4GVYW4GwmNdIRx/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer">
                 <i className="fa fa-file-pdf-o"></i>
@@ -60,23 +60,26 @@ export default class AboutSection extends Component {
             <div id="container">
               <h2>Abridged Work Experience</h2>
               <div>
-                <h5>MyFutprint Entertainment, LLC:</h5>
-                <p>Aug '19 - Present</p>
+                <h4>MyFutprint Entertainment, LLC:</h4>
+                <p>Aug 2019 - Oct 2021</p>
                 <div>
                   Brought on as an intern in August 2019 and worked my way onto
-                  the staff as an editor.
+                  the staff as an editor for various international graphic
+                  novels.
                 </div>
               </div>
               <div>
-                <h5>Freelance Web Design and Video Editing:</h5>
+                <h4>DePuy Synthes Companies:</h4>
                 <div>
                   <div>
-                    <p>May '17 - Present</p>
+                    <p>Jan 2021 - Aug 2021</p>
                   </div>
                   <div>
-                    Have worked as a freelance web desiger for TK Fitness and AB
-                    Pilates as well as and editor for YouTube channel
-                    Craftsdwarf
+                    Communications Co-Op. Involved Web Design, Graphic Design,
+                    Video Editing & Motion Graphic Design for a global audience.
+                    Wrote a comprehensive, 60+ page “Communications Playbook”
+                    teaching future team members how to interact with all of our
+                    various technical systems.
                   </div>
                 </div>
               </div>
